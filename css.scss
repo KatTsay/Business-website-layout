@@ -1,0 +1,241 @@
+@use 'mixin.scss';
+
+* {
+    @include mixin.no-margin;
+}
+
+.container {
+    width: 1920px;
+}
+
+$black-col: #1C1C1C;
+$a-col: #222222;
+$white-col: #ffffff;
+$bl-col: #000000;
+$bg-col: #3E5C50;
+$col-text: rgba(255, 255, 255, 0.31);;
+$col-app-text: #333333;
+
+header {
+    margin: auto;
+    padding-top: 26px;
+}
+
+.navigation {
+    @include mixin.test(space-around, center, 0);
+    h3 {
+        @include mixin.font ('Roboto Slab', normal, 400, 27px, 22px);
+        color: $black-col;
+        overflow-y: hidden
+    }
+    ul {
+        @include mixin.test(space-around, center, 34px);
+        li {
+            list-style-type: none;
+            a {
+                @include mixin.font ('Roboto', normal, 400, 15px, 22px);
+                text-decoration: none;
+                color: $a-col;
+            }
+        }
+    }
+}
+
+$var1: 1920;
+$var2: 1440;
+$var3: 100%;
+
+.wrapper {
+    width: $var2 * $var3 / $var1;
+}
+
+$img-path: "../image/";
+$header-bg: "bg-img.png";
+$header-image: "header-img.png";
+
+.header-banner {
+    @include mixin.test(center, center, 55px) ;
+    background-image: url("#{$img-path}#{$header-bg}");
+    margin-top: 26px;
+    padding: 70px 0;
+
+    &-text {
+        $var1: 1440;
+        $var2: 480;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+        h5 {
+            @include mixin.font ('Roboto', normal, 400, 38px, 44px);
+            color: $white-col;
+            margin-bottom: 21px;
+            overflow-y: hidden;
+        }
+        p {
+            @include mixin.font ('Roboto', normal, 400, 20px, 26px);
+            color: $white-col;
+            margin-bottom: 25px;
+        }
+    }
+
+    &-image {
+        $var1: 1440;
+        $var2: 460;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+        background-image: url("#{$img-path}#{$header-image}");
+    }
+}
+
+.header-banner-text-bottom {
+    @include mixin.test (space-evenly, baseline, 0);
+    .text-p {
+        @include mixin.test (center, center, 0);
+    h5 {
+        @include mixin.font ('Roboto Slab', normal, 400, 16px, 22px);
+        color: $bl-col;
+        text-align: center;
+    }
+}
+}
+    
+.btn {
+    @include mixin.test (center, center, 0);
+    background-color: $bl-col;
+    width: 110px;
+    height: 48px;
+    border-radius: 3px;
+    box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.12);
+    color: $white-col;
+    @include mixin.font ('Roboto Slab', normal, 400, 16px, 22px);
+    text-align:center;
+}
+
+.companies-wrapper {
+    margin: auto;
+    background-color: $bg-col;   
+}
+
+.comp {
+        
+        @include mixin.test(center, center, 25px);
+        flex-direction: column;
+        padding-top: 28px;
+        padding-bottom: 58px;
+        p {
+            @include mixin.font ('Roboto', normal, 400, 15px, 22px);
+            text-align: center;
+            color: $col-text;
+        }
+        
+        .images {
+            @include mixin.test (center, center, 60px)
+        }
+    }
+
+
+.across-device-wrapper {
+    margin: auto;
+    padding-top: 69px;
+    @include mixin.test(center, center, 0);
+    flex-direction: column;
+}
+
+.across-device-header {
+        @include mixin.test(center, center, 0);
+        flex-direction: column;
+    h4 {
+        @include mixin.font ('Roboto', normal, 400, 29px, 36px);
+        text-align: center;
+        color: $col-app-text;
+        margin-bottom: 10px;
+    }
+
+    h6 {
+        @include mixin.font ('Roboto', normal, 400, 19px, 22px);
+        text-align: center;
+        color: $col-app-text;
+        margin-bottom: 69px;
+    }
+}
+
+.across-device-web-app {
+        $var1: 1440;
+        $var2: 960;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+        margin: auto;
+    @include mixin.test(flex-start, center, 20px);
+
+    &-text {
+        $var1: 960;
+        $var2: 389;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+        height: 293px;
+        padding-top: 36px;
+        h4 {
+            @include mixin.font ('Roboto', normal, 400, 22px, 30px);
+            color: $col-app-text;
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        p {
+            @include mixin.font ('Roboto', normal, 400, 16px, 22px);
+            color: $col-app-text;
+        }
+    }
+}
+
+.across-device-mobile-app {
+        $var1: 1440;
+        $var2: 960;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+        margin: auto;
+    @include mixin.test(space-between, center, 20px);
+    margin-bottom: 73px;
+
+    &-text {
+        $var1: 960;
+        $var2: 389;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+        @include mixin.test(flex-start, flex-start, 17px);
+        flex-direction: column;
+        height: 293px;
+        padding-top: 36px;
+        h4 {
+            @include mixin.font ('Roboto', normal, 400, 22px, 30px);
+            color: $col-app-text;
+        }
+
+        p {
+            @include mixin.font ('Roboto', normal, 400, 16px, 22px);
+            color: $col-app-text;
+        }
+    }
+}
+
+.across-device-all-info {
+        $var1: 1440;
+        $var2: 960;
+        $var3: 100%;
+        width: $var2 * $var3 / $var1;
+    @include mixin.test(space-between, center, 43px);
+
+    &-box {
+        h4 {
+            width: 166px;
+            @include mixin.font ('Roboto', normal, 400, 21px, 30px);
+            color: $col-app-text;
+            margin-top: 17px;
+            margin-bottom: 17px;
+        }
+
+        p{
+            @include mixin.font ('Roboto', normal, 400, 15px, 22px);
+            color: $col-app-text;
+        }
+    }
+}
